@@ -221,6 +221,7 @@ body {
   font-size: .85rem;
   cursor: pointer;
   transition: background .25s, color .25s, transform .15s;
+  text-decoration: none;
 }
 .btn-more span { display: inline-block; transition: transform .25s; }
 .btn-more:hover { background: var(--accent); color: #0e0e15; }

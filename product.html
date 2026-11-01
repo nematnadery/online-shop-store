@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product | Stride</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/product.css">
+</head>
+<body>
+
+  <!-- Decorative background glows -->
+  <span class="glow glow-1"></span>
+  <span class="glow glow-2"></span>
+
+  <div class="app">
+
+    <header class="header">
+      <button class="logo">Stride<span>.</span></button>
+      <button class="back-link" id="back-link">← Back to collection</button>
+    </header>
+
+    <!-- ===== Product details =====
+         JS reads the product id from the URL (product.html?id=1),
+         finds the product and fills the elements below.
+         The sample content is only here so you can see the style; JS will replace it.
+         Set the card color from JS with:
+         document.getElementById('detail').style.setProperty('--accent', product.color)
+    -->
+    <main class="detail" id="detail" style="--accent: #4f8cff;">
+
+      <!-- Left: image -->
+      <section class="detail-visual">
+        <span class="detail-tag" id="detail-tag">New</span>
+        <div class="detail-circle"></div>
+
+        <!-- Replace the emoji with an <img>, for example:
+             <img src="img/shoe.png" alt="Sport Shoe"> -->
+        <div class="detail-shoe" id="detail-img">
+          <span class="img-placeholder">👟</span>
+        </div>
+      </section>
+
+      <!-- Right: information -->
+      <section class="detail-info">
+        <span class="detail-category" id="detail-category">Sport</span>
+        <h1 class="detail-name" id="detail-name">Sport Shoe</h1>
+        <p class="detail-price" id="detail-price">$53</p>
+        <p class="detail-desc" id="detail-desc">
+          Light and breathable, made for long runs and busy days.
+        </p>
+
+        <h3 class="block-title">Specifications</h3>
+
+        <!-- JS adds <li class="spec-item"> elements here. Template of one item:
+             <li class="spec-item">
+               <span class="spec-label">Material</span>
+               <strong class="spec-value">Mesh</strong>
+             </li>
+        -->
+        <ul class="spec-list" id="detail-specs">
+          <li class="spec-item">
+            <span class="spec-label">Material</span>
+            <strong class="spec-value">Mesh</strong>
+          </li>
+          <li class="spec-item">
+            <span class="spec-label">Weight</span>
+            <strong class="spec-value">280 g</strong>
+          </li>
+          <li class="spec-item">
+            <span class="spec-label">Color</span>
+            <strong class="spec-value">Sky blue</strong>
+          </li>
+          <li class="spec-item">
+            <span class="spec-label">Origin</span>
+            <strong class="spec-value">Vietnam</strong>
+          </li>
+        </ul>
+
+        <h3 class="block-title">Select size</h3>
+
+        <!-- JS adds size buttons here. The chosen size gets the extra class "active":
+             <button type="button" class="size-btn">40</button>
+             <button type="button" class="size-btn active">41</button>
+        -->
+        <div class="sizes" id="detail-sizes">
+          <button type="button" class="size-btn">39</button>
+          <button type="button" class="size-btn">40</button>
+          <button type="button" class="size-btn active">41</button>
+          <button type="button" class="size-btn">42</button>
+          <button type="button" class="size-btn">43</button>
+          <button type="button" class="size-btn">44</button>
+        </div>
+
+        <button type="button" class="btn-buy" id="buy-btn">Add to bag</button>
+      </section>
+
+    </main>
+
+    <!-- Shown by JS when the id in the URL doesn't match any product
+         (remove the class "hidden" to show it, and hide #detail) -->
+    <div class="not-found hidden" id="not-found">
+      <span class="not-found-icon">🔍</span>
+      <h2>Product not found</h2>
+      <p>This product doesn't exist or was removed.</p>
+      <a href="index.html" class="btn-home">Back to collection</a>
+    </div>
+
+  </div>
+
+  <script src="JS/product.js"></script>
+</body>
+</html>
